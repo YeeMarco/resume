@@ -1,0 +1,632 @@
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: #444;
+  background: #f9f9f9;
+  font-size: 16px;
+  font-family: "PT Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+/*##### HERO SECTION #####*/
+.hero {
+  height: 100%;
+  background: url("https://hd.unsplash.com/19/desktop.JPG");
+  background-size: cover;
+  background-position: center;
+}
+.hero .content {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 100%;
+}
+.hero .content .header {
+  position: absolute;
+  top: 55%;
+  width: 100%;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+  text-align: center;
+  opacity: 0;
+}
+.hero .content .headershow{
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+  width: 100%;
+  text-align: center;
+  opacity: 1;
+  transition: all .5s
+}
+.hero .content h1 {
+  color: #fff;
+  font-size: 2.5em;
+  text-shadow: 0px 2px 3px #2d2d2d;
+}
+
+/*##### ABOUT MYSELF SECTION #####*/
+.about-myself {
+  padding: 50px 20px;
+}
+.about-myself .content {
+  text-align: center;
+}
+.about-myself .content h2 {
+  color: #3d3d3d;
+  font-size: 3em;
+  margin-bottom: 20px;
+  -webkit-transform: translateY(-50px) scale(0);
+  transform: translateY(-50px) scale(0);
+  -webkit-transition: transform .7s;
+  -moz-transition: transform .7s;
+  transition: transform .7s;
+}
+.about-myself .content .aboutTitleVisible {
+  -webkit-transform: translateY(0px) scale(1);
+  transform: translateX(0px) scale(1);
+}
+.about-myself .content p span {
+  color: #155CA6;
+  font-weight: bold;
+}
+
+/*##### EXPERIENCE SECTION #####*/
+.experience {
+  background: #5489BF;
+  padding: 50px 0;
+  overflow-x: hidden;
+}
+.experience .content {
+  text-align: center;
+}
+.experience .content h1 {
+  font-size: 2em;
+  color: #fff;
+}
+.experience .content ul {
+  padding: 50px 0;
+  list-style-type: none;
+}
+.experience .content ul li {
+  background: #f5f5f5;
+  position: relative;
+  margin-left: 20px;
+  width: 5px;
+  padding-bottom: 40px;
+}
+.experience .content ul li:last-child {
+  padding-bottom: 7px;
+}
+.experience .content ul li:before {
+  content: '';
+  background: #5489BF;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border: 4px solid #f5f5f5;
+}
+.experience .content ul li .hidden {
+  opacity: 0;
+  margin-left: 10vw;
+}
+.experience .content ul li .experience-content {
+  background: #f5f5f5;
+  position: relative;
+  top: 7px;
+  left: 48px;
+  width: calc(100vw - 100px);
+  padding: 20px;
+  text-align: center;
+  -webkit-border-radius: 0 5px 5px;
+  -moz-border-radius: 0 5px 5px;
+  border-radius: 0 5px 5px;
+}
+.experience .content ul li .experience-content h2 {
+  font-size: 1.5em;
+  color: #3c3c3c;
+  padding-bottom: 10px;
+}
+.experience .content ul li .experience-content .experience-time {
+  color: #777;
+  font-size: 1.1em;
+  padding-bottom: 10px;
+}
+.experience .content ul li .experience-content p {
+  color: #1a1a1a;
+  font-size: .95em;
+}
+.experience .content ul li .experience-content:before {
+  content: '';
+  background: #f5f5f5;
+  position: absolute;
+  top: 0;
+  left: -35px;
+  width: 35px;
+  height: 5px;
+}
+
+/*##### SKILLS SECTION #####*/
+.skills {
+  padding: 70px 20px;
+}
+.skills .content .development-wrapper .development-title {
+  color: #3c3c3c;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.skills .content .development-wrapper .skills-bar-container {
+  position: relative;
+  width: 100%;
+  list-style-type: none;
+}
+.skills .content .development-wrapper .skills-bar-container li {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.skills .content .development-wrapper .skills-bar-container li .progressbar-title {
+  color: #3c3c3c;
+  margin-bottom: 5px;
+}
+.skills .content .development-wrapper .skills-bar-container li .progressbar-title h3 {
+  display: inline-block;
+}
+.skills .content .development-wrapper .skills-bar-container li .progressbar-title .percent {
+  position: absolute;
+  right: 20px;
+  font-size: 1.1em;
+}
+.skills .content .development-wrapper .skills-bar-container li .bar-container {
+  background: #ececec;
+  position: relative;
+  width: 100%;
+  height: 10px;
+}
+.skills .content .development-wrapper .skills-bar-container li .bar-container .progressbar {
+  background: #34495e;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+}
+.skills .content .tools-knowledge-wrapper {
+  width: 100%;
+}
+.skills .content .tools-knowledge-wrapper .tools-wrapper,
+.skills .content .tools-knowledge-wrapper .knowledge-wrapper {
+  position: relative;
+  padding: 20px 0;
+  widht: 100%;
+  text-align: center;
+}
+.skills .content .tools-knowledge-wrapper .tools-wrapper .title,
+.skills .content .tools-knowledge-wrapper .knowledge-wrapper .title {
+  color: #3c3c3c;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.skills .content .tools-knowledge-wrapper .tools-wrapper ul,
+.skills .content .tools-knowledge-wrapper .knowledge-wrapper ul {
+  list-style-type: none;
+  margin-left: 40px;
+}
+.skills .content .tools-knowledge-wrapper .tools-wrapper ul li,
+.skills .content .tools-knowledge-wrapper .knowledge-wrapper ul li {
+  color: #444;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-align: left;
+}
+.skills .content .tools-knowledge-wrapper .tools-wrapper ul li i,
+.skills .content .tools-knowledge-wrapper .knowledge-wrapper ul li i {
+  color: #27ae60;
+}
+
+/*##### PORTFOLIO SECTION #####*/
+.portfolio {
+  background: #f9f9f9;
+  padding: 80px 0;
+}
+.portfolio .content {
+  text-align: center;
+}
+.portfolio .content h1 {
+  color: #3c3c3c;
+  font-size: 2em;
+  margin-bottom: 50px;
+}
+.portfolio .content .projects {
+  width: 100%;
+}
+.portfolio .content .projects .project {
+  color: #fff;
+  position: relative;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  overflow: hidden;
+}
+.portfolio .content .projects .project:last-child {
+  margin-bottom: 0;
+}
+.portfolio .content .projects .project .project-image img {
+  width: 100%;
+}
+.portfolio .content .projects .project .project-title {
+  color: #3c3c3c;
+  padding: 10px 0;
+}
+.portfolio .content .projects .project .project-description {
+  color: #444;
+}
+
+
+/* ############################
+        RESPONSIVE
+############################### */
+@media screen and (min-width: 480px) {
+  .skills .content .tools-knowledge-wrapper .tools-wrapper,
+  .skills .content .tools-knowledge-wrapper .knowledge-wrapper {
+    width: 50%;
+    float: left;
+    padding: 0;
+  }
+  .skills .content .tools-knowledge-wrapper .tools-wrapper ul,
+  .skills .content .tools-knowledge-wrapper .knowledge-wrapper ul {
+    margin-left: 0;
+  }
+  .skills .content .clear {
+    clear: both;
+  }
+}
+
+/* @media screen and (min-width: 640px) {
+  .about-myself {
+    padding: 100px 40px;
+  }
+
+  .skills {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .skills .content .development-wrapper {
+    width: 600px;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  .skills .content .tools-knowledge-wrapper {
+    width: 600px;
+    margin: auto;
+  }
+
+  
+} */
+@media screen and (min-width: 960px) {
+  .experience .content ul li {
+    margin: 0 auto;
+  }
+  .experience .content ul li .experience-content {
+    width: 40vw;
+  }
+  .experience .content ul li:nth-child(odd) .experience-content {
+    left: 63px;
+  }
+  .experience .content ul li:nth-child(odd) .experience-content:before {
+    left: -50px;
+    width: 50px;
+  }
+  .experience .content ul li:nth-child(even) .experience-content {
+    left: calc(-40vw - 57px);
+    -webkit-border-radius: 5px 0px 5px 5px;
+    -moz-border-radius: 5px 0px 5px 5px;
+    border-radius: 5px 0px 5px 5px;
+  }
+  .experience .content ul li:nth-child(even) .experience-content:before {
+    left: auto;
+    right: -50px;
+    width: 50px;
+  }
+  .experience .content ul li:nth-child(odd) .hidden {
+    margin-left: 10vw;
+  }
+  .experience .content ul li:nth-child(even) .hidden {
+    margin-left: -10vw;
+  }
+
+  .skills {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .skills .content {
+    max-width: 1100px;
+    margin: auto;
+  }
+  .skills .content .development-wrapper,
+  .skills .content .tools-knowledge-wrapper {
+    float: left;
+  }
+  .skills .content .development-wrapper {
+    margin-bottom: 0;
+    width: 60%;
+  }
+  .skills .content .tools-knowledge-wrapper {
+    width: 40%;
+    margin-top: 60px;
+  }
+  .skills .content .tools-knowledge-wrapper .tools-wrapper,
+  .skills .content .tools-knowledge-wrapper .knowledge-wrapper {
+    float: none;
+    margin: auto;
+  }
+  .skills .content .tools-knowledge-wrapper .tools-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .portfolio .content .projects .project {
+    position: relative;
+    margin: auto;
+    margin-bottom: 3%;
+    width: 680px;
+    height: 450px;
+    overflow: hidden;
+  }
+  .portfolio .content .projects .project:hover .project-image {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  .portfolio .content .projects .project:hover .project-title, .portfolio .content .projects .project:hover .project-description {
+    opacity: 1;
+  }
+  .portfolio .content .projects .project .project-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: transform .5s ease;
+    transition: transform .5s ease;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    z-index: 3;
+    overflow: hidden;
+  }
+  .portfolio .content .projects .project .project-image img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+  }
+  .portfolio .content .projects .project .project-title,
+  .portfolio .content .projects .project .project-description {
+    position: absolute;
+    height: 50%;
+    opacity: 0;
+    -webkit-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+    overflow: hidden;
+  }
+  .portfolio .content .projects .project .project-title {
+    width: 50%;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+    display: table;
+  }
+  .portfolio .content .projects .project .project-title h2 {
+    font-size: 2em;
+    text-decoration: underline;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .portfolio .content .projects .project .project-description {
+    width: 100%;
+    top: 50%;
+    left: 0;
+    padding: 25px 10px;
+    text-align: left;
+  }
+
+  .button {
+    width: auto;
+    height: auto;
+    margin: 0.8rem 0.8rem 0.8rem 0;
+    padding: 1rem 1.5rem;
+    position: relative;
+    display: inline-block;
+    color: #409EFF;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.6s;
+  }
+  .button:hover, .button:focus {
+    color: #FFD18D;
+  }
+  .button:before, .button:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: #409EFF;
+    width: 2px;
+    top: 0;
+    bottom: 0;
+    transition: all 0.3s;
+    transform: scaleY(1);
+  }
+  .button:before {
+    left: 0;
+    transform-origin: 0% 0%;
+  }
+  .button:after {
+    right: 0;
+    transform-origin: 0% 100%;
+  }
+  .button:hover:before, .button:hover:after, .button:focus:before, .button:focus:after {
+    transform: scaleY(0);
+  }
+  .button span:nth-child(2):before, .button span:nth-child(2):after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: #409EFF;
+    height: 2px;
+    right: 0;
+    left: 0;
+    transition: all 0.3s;
+    transform: scaleX(1);
+  }
+  .button span:nth-child(2):before {
+    top: 0;
+    transform-origin: 100% 0%;
+  }
+  .button span:nth-child(2):after {
+    bottom: 0;
+    transform-origin: 0% 0%;
+  }
+  .button:hover span:nth-child(2):before, .button:hover span:nth-child(2):after, .button:focus span:nth-child(2):before, .button:focus span:nth-child(2):after {
+    transform: scaleX(0);
+  }
+  .button span:first-child:before, .button span:first-child:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: #FFD18D;
+    width: 2px;
+    top: 0;
+    bottom: 0;
+    transition: all 0.6s;
+    transform: scaleY(0);
+  }
+  .button span:first-child:before {
+    left: 0;
+    transform-origin: 0% 100%;
+  }
+  .button span:first-child:after {
+    right: 0;
+    transform-origin: 0% 0%;
+  }
+  .button:hover span:first-child:before, .button:hover span:first-child:after, .button:focus span:first-child:before, .button:focus span:first-child:after {
+    transform: scaleY(1);
+  }
+  .button span:last-child:before, .button span:last-child:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: #FFD18D;
+    height: 2px;
+    right: 0;
+    left: 0;
+    transition: all 0.6s;
+    transform: scaleX(0);
+  }
+  .button span:last-child:before {
+    top: 0;
+    transform-origin: 0% 0%;
+  }
+  .button span:last-child:after {
+    bottom: 0;
+    transform-origin: 100% 0%;
+  }
+  .button:hover span:last-child:before, .button:hover span:last-child:after, .button:focus span:last-child:before, .button:focus span:last-child:after {
+    transform: scaleX(1);
+  }
+}
+
+
+
+
+
+
+
+
+/*Contact form;type=form*/
+#mailer{
+	height: 320px;
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 3px;
+}
+/*Input name+email;type=text*/
+#mailer > .name input, #mailer > .email input{
+	max-width: 900px;
+	height: 40px;
+	width: 100%;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+/*Input message;type=text*/
+#mailer > .text textarea{
+	max-width: 900px;
+	width: 100%;
+	height: 150px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	resize: none;
+}
+/*Send button;type=submit*/
+#mailer > .submit input{
+	width: 150px;
+	height: 40px;
+	float: right;
+	border-radius: 5px;
+}
+/*Reset button;type=reset*/
+#mailer > .reset input{
+	width: 150px;
+	height: 40px;
+	float: left;
+	border-radius: 5px;
+}
+#mailer > .name input, #mailer > .email input, #mailer > .text textarea{
+	border: 1px solid #e5e5e5;
+}
+#mailer > .submit input, #mailer > .reset input{
+	color: #6b6b6b;
+	border: 1px solid #e5e5e5;
+	background-color: #f5f5f5;
+ }
+ #mailer > .submit input:hover, #mailer > .reset input:hover{
+	background-color: #6b6b6b;
+	color: #f5f5f5;
+ }
+
+/*Mail was sent*/
+#wraptheform{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+   
+    margin: 0 auto;
+  
+    margin-bottom: 50px;
+   
+}
