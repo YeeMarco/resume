@@ -1,4 +1,7 @@
 let str = `I\'m Mengyu Xie, welcome to my resume page! \nooops...,You say this page is too rough?\nWell, it really is.\n(°:з」∠)_,那我就将简历变得好看点把。\n咦，你怎么突然说中文了。。。\n可能是国际化失败吧 !（￣︶￣）↗ \n冲鸭`
+let str2 = `简历\n你好，我叫谢孟宇,毕业于上海理工大学，硕士研究生。乐于分享、性格开朗，享受。。。\n享受什么，这什么鬼啊，这哪里就好看了？\n加点颜色加点特效就好看了？ヽ(‘⌒´メ)ノ滚\n 好吧，又是一次失败的尝试，不过没关系我相信我总有一次会成功。
+还是麻烦点击按钮转到正常简历吧。捂脸 ε=ε=ε=┏(゜ロ゜;)┛ 逃！
+`
 const randColor  = [
   { main: '#FBDB4A', shades: ['#FAE073', '#FCE790', '#FADD65', '#E4C650'] },
   { main: '#F3934A', shades: ['#F7B989', '#F9CDAA', '#DD8644', '#F39C59'] },
@@ -63,8 +66,6 @@ class component {
       color = randColor[this.colornum].shades[Math.floor(Math.random()*4)];
     }
     
-   
-    console.log(color)
     this.el.style.fill = color;
   }
   add(){
@@ -94,7 +95,6 @@ class component {
   }
   
 }
-
 class click_svg_effct {
   //props --> speed R c_num t_num
   constructor(option){
@@ -144,40 +144,19 @@ class click_svg_effct {
   }
  
 }
-
 let s = new click_svg_effct({});
 
-
-// class bindvalue {
-
-//   constructor(str){
-//     this.value = str;
-//     Object.defineProperty(this, str, {
-      
-//       get: function() {
-//           console.log('get val:'+ value);
-//           return str;
-//    　 },
-//   　　set: function(newVal) {
-//         str = newVal;
-//         document.querySelector('#resume').innerHTML(newVal)
-//       }
-//   })
-//   }
-
-
-// }
-
-class bindvalue {
+class stringPrint {
   constructor(str){
     let value = null;
     Object.defineProperty(this, 'value', {
       get: function() {
-       
+        //监听  添加到订阅者
         return value;
       },
       set: function(newVal) {
         value = newVal;
+        //分发到订阅者
         document.querySelector('#resume').innerText=(newVal)
       }
     })
@@ -188,20 +167,12 @@ function randDelay(min, max) {
 	return Math.floor(Math.random() * (max-min+1)+min);
 }
 
-function autorun (){
+function autorun (cb){
   document.querySelector('#resume').className = 'center'
-  let bind = new bindvalue(str)
+  let bind = new stringPrint(str)
   let strArr = str.split('')
   let currentStr = '';
   let index = 0;
-  // let timerid = setInterval(function(){
-  //   bind.value = currentStr + strArr[index];
-  //   currentStr += strArr[index];
-  //   index++;
-  //   if (index === strArr.length) {
-  //     clearInterval(timerid)
-  //   }
-  // },500)
   function addletter(){
     currentStr += strArr[index];
     index++;
@@ -214,10 +185,10 @@ function autorun (){
           let Countdown = function(){
             setTimeout(()=>{
               bind.value =  currentStr + (i--);
-              if(i > -1){
+              if(i >= 0){
                 Countdown()
               } else {
-                changestyle()
+                cb()
               }
             }
             ,1000)
@@ -226,23 +197,25 @@ function autorun (){
         } else {
           bind.value =  currentStr + '_';
         }     
-      },randDelay(1,2))
+      },randDelay(30,80))
     }
 
   }
   addletter()
 }
 
-function changestyle(){
- 
+autorun(()=>{changestyle(autoaddchar)})
+
+function changestyle(cb){
   let body  = document.querySelector('body');
   body.removeChild( document.querySelector('#resume'));
   body.className =  'bodychange';
   container = document.createElement('p');
   container.className = 'container';
   body.appendChild(container);
-  autoaddchar()
+  cb();
 }
+
 
 function addletter(char,cb){
   let el = document.createElement('div');
@@ -255,7 +228,6 @@ function addletter(char,cb){
     el.style.minWidth = '20px';
   }
   if(char === '\n'){
-    
     el.style.display = 'block';
   } else {
     el.innerText = char;
@@ -302,11 +274,16 @@ function charAnimate(char,cb){
 }
 let index = 0;
 function autoaddchar(){
-  let strarr = str.split('');
+  let strarr = str2.split('');
   if(index< strarr.length){
     addletter(strarr[index],autoaddchar)
   }
   index++;
 }
-autorun()
 
+
+function nav(path){
+    
+  window.location.href = path
+}
+console.log("%c 偷看我的代码干嘛  溜了溜了。。。。 ", "padding:50px 100px;font-size:40px;line-height:120px;background:url('https://p0.cdn.img9.top/ipfs/QmSkVsy3YKEcd4LXzG3pBySynZik6aT6kKNCmAV4kS8ZJ1?0.gif') ;");
